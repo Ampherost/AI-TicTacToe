@@ -1,11 +1,15 @@
 #ifndef AI_H
 #define AI_H
 
-class AI {
+#include "board.h"
 
+class AI {
+public:
+    static void aiMove(Board& Board);
+
+private:
+    static int minimax(Board& board, bool isAI);
 
 };
-
-
 
 #endif  
