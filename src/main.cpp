@@ -1,7 +1,7 @@
 #include <iostream>
-#include "board.h"
-#include "ai.h"
-#include "utility.h"
+#include "board.hpp"
+#include "ai.hpp"
+#include "utility.hpp"
 
 int main() {
     Board board;  // Create the Tic-Tac-Toe game board

@@ -1,5 +1,5 @@
-#include "ai.h"
-#include "utility.h"
+#include "ai.hpp"
+#include "utility.hpp"
 #include <algorithm>
 
 int AI::minimax(Board& board, bool isAI) {

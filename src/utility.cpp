@@ -1,4 +1,4 @@
-#include "utility.h"
+#include "utility.hpp"
 #include <iostream>
 
 bool checkWin(const Board& board, char player) {

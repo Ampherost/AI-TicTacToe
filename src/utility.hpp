@@ -1,7 +1,7 @@
-#ifndef UTILITY_H
-#define UTILITY_H
+#ifndef UTILITY_HPP
+#define UTILITY_HPP
 
-#include "board.h"
+#include "board.hpp"
 
 // Checks if a player has won the game
 bool checkWin(const Board& board, char player);
