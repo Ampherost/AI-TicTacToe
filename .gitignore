@@ -1,2 +1,5 @@
 # Visual Studio Code (VSCode) configuration files
 .vscode
+
+#Executable
+TicTacToe.exe
