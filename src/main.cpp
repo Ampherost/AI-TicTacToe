@@ -32,8 +32,10 @@ int main() {
         currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
     }
 
-    std::cout << "Press any key to exit" << std::endl;
-    std::cin.get();
+
+    std::string key;
+    std::cout << "Press any key followed by Enter to exit: ";
+    std::cin >> key;  
 
     return 0;
 }
