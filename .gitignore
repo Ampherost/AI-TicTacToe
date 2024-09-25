@@ -3,3 +3,8 @@
 
 #Executable
 TicTacToe.exe
+
+# Ignore GoogleTest build artifacts
+googletest/build/
+googletest/*.o
+googletest/*.a

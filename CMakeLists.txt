@@ -4,11 +4,17 @@ cmake_minimum_required(VERSION 3.10)
 # Project name and supported languages
 project(AI_TicTacToe VERSION 1.0 LANGUAGES CXX)
 
-# Specify the C++ standard (e.g., C++11, C++14, C++17)
+# Specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Define source files for your Tic-Tac-Toe game
+# Define the header and source files for your Tic-Tac-Toe game
+set(HEADERS
+    src/board.hpp
+    src/ai.hpp
+    src/utility.hpp
+)
+
 set(SOURCES
     src/main.cpp
     src/board.cpp
@@ -16,30 +22,19 @@ set(SOURCES
     src/utility.cpp
 )
 
-# Define the header files if you want to include them
-set(HEADERS
-    src/board.hpp
-    src/ai.hpp
-    src/utility.hpp
-)
+# Create a library for the Tic-Tac-Toe core logic
+add_library(TicTacToeCore ${SOURCES})
+target_include_directories(TicTacToeCore PUBLIC src)
 
 # Create an executable for your game
-add_executable(TicTacToe ${SOURCES} ${HEADERS})
+add_executable(TicTacToe src/main.cpp)
+target_link_libraries(TicTacToe PRIVATE TicTacToeCore)
 
 # Enable testing
 enable_testing()
 
-# Fetch GoogleTest
-include(FetchContent)
-FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/release-1.12.1.zip
-)
-# Download and add GoogleTest
-FetchContent_MakeAvailable(googletest)
+# Manually add GoogleTest from the googletest/ directory
+add_subdirectory(googletest)  # Add GoogleTest's CMake files
 
-# Link GoogleTest to your executable for unit testing
-target_link_libraries(TicTacToe PRIVATE gtest gtest_main)
-
-# Add a directory for your unit tests (if you have a Testing directory)
+# Add a subdirectory for your unit tests (this will contain a separate CMakeLists.txt)
 add_subdirectory(test)
