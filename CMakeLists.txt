@@ -1,5 +1,5 @@
 # Set the minimum required CMake version
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.30)
 
 # Project name and supported languages
 project(AI_TicTacToe VERSION 1.0 LANGUAGES CXX)
